@@ -27,8 +27,8 @@ namespace Bookstore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<IBookstoreRepository<Author>,AuthorRepository>();
-            services.AddSingleton<IBookstoreRepository<Book>, BookRepository>();
+            services.AddSingleton<IBookstoreRepository<Author>,AuthorDbRepository>();
+            services.AddSingleton<IBookstoreRepository<Book>, BookDbRepository>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddDbContext<BookstoreDbContext>(options =>
             {
